@@ -6,8 +6,6 @@
 ![LangChain](https://img.shields.io/badge/LangChain-0.3-1C3C3C)
 ![FAISS](https://img.shields.io/badge/FAISS-Vector_Store-0467DF)
 ![HuggingFace](https://img.shields.io/badge/🤗_Hugging_Face-Embeddings-FFD21E)
-![License](https://img.shields.io/badge/License-MIT-green)
-
 ---
 
 ## 📊 Impact at a Glance
