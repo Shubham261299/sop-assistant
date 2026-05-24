@@ -215,11 +215,6 @@ All defaults live at the top of `index.py` and `chat.py`. Common tweaks:
 
 **Why strict "context-only" prompting?** Compliance. An SOP assistant that invents a step is worse than one that says "I don't know."
 
----
-
-## 📝 License
-
-MIT — see [LICENSE](LICENSE).
 
 ---
 
