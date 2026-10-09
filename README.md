@@ -1,3 +1,11 @@
+<div align="center">
+
+<img src=".github/banner.svg" width="100%" alt="Shubham AI Lab, system 07 of 07 (Open Source): SOP PDFs → Chunk + embed → FAISS → Retrieve → Cited answer or refusal. Stack: LangChain, FAISS, Hugging Face, Python.">
+
+[🌐 Portfolio](https://shubham-ai-lab.vercel.app/) · [👤 GitHub profile](https://github.com/Shubham261299) · [💼 LinkedIn](https://www.linkedin.com/in/shubham-jamdar-2571271b3)
+
+</div>
+
 # 🤖 AI-Powered SOP Assistant
 
 > **Stop scrolling through 200-page PDFs.** A local-first RAG system that turns your company's Standard Operating Procedures into a conversational, source-cited assistant — powered by FAISS, Hugging Face embeddings, and Qwen2.5-Coder-32B.
