@@ -1,33 +1,34 @@
-<div align="center">
+<img src="docs/images/portfolio-cover.webp" width="100%" alt="SOP Assistant: conceptual project artwork matching the portfolio.">
 
-<img src=".github/banner.svg" width="100%" alt="Shubham AI Lab, system 07 of 07 (Open Source): SOP PDFs → Chunk + embed → FAISS → Retrieve → Cited answer or refusal. Stack: LangChain, FAISS, Hugging Face, Python.">
+# SOP Assistant
 
-[🌐 Portfolio](https://shubham-ai-lab.vercel.app/) · [👤 GitHub profile](https://github.com/Shubham261299) · [💼 LinkedIn](https://www.linkedin.com/in/shubham-jamdar-2571271b3)
+### An answer you can trace back to the page.
 
-</div>
+Index procedure PDFs, retrieve relevant passages, and generate answers with file and page citations.
 
-# 🤖 AI-Powered SOP Assistant
+**Source available · Local retrieval with hosted generation through Hugging Face. A token and provider availability are required; this is not fully offline.**
 
-> **Stop scrolling through 200-page PDFs.** A local-first RAG system that turns your company's Standard Operating Procedures into a conversational, source-cited assistant — powered by FAISS, Hugging Face embeddings, and Qwen2.5-Coder-32B.
+**[Explore the case study ↗](https://shubham-ai-lab.vercel.app/work/sop-assistant)** · [Technical guide](#technical-guide) · [More projects](https://shubham-ai-lab.vercel.app/work)
 
-![Python](https://img.shields.io/badge/Python-3.10+-3776AB?logo=python&logoColor=white)
-![LangChain](https://img.shields.io/badge/LangChain-0.3-1C3C3C)
-![FAISS](https://img.shields.io/badge/FAISS-Vector_Store-0467DF)
-![HuggingFace](https://img.shields.io/badge/🤗_Hugging_Face-Embeddings-FFD21E)
----
+## Engineering receipt
 
-## 📊 Impact at a Glance
+| Decision | Why it matters |
+| --- | --- |
+| Keep evidence attached | Page and filename metadata travel with retrieved chunks. |
+| Separate retrieval from generation | Embeddings and FAISS retrieval are local; answer generation calls a hosted endpoint. |
+| Avoid unsupported certainty | Context-only prompting and citations help inspection; they do not guarantee factual answers. |
 
-| Metric | Before (Manual Lookup) | After (SOP Assistant) | Improvement |
-|---|---|---|---|
-| **Time to answer a procedural question** | ~3–5 minutes | < 3 seconds | **~96% faster** |
-| **Search recall across 1,000+ pages** | Keyword-limited (Ctrl+F) | Semantic (meaning-aware) | **Multi-document context** |
-| **Onboarding ramp-up for new hires** | Hours of reading | Conversational Q&A | **Self-service** |
-| **Cost per query** | $0 + human time | $0 hosted locally* | **API-free retrieval** |
+## Technical guide
 
-<sub>*Embeddings run locally on CPU. Only the final LLM call hits the Hugging Face Inference Endpoint. Numbers above are projected benchmarks for a typical 500-page SOP corpus vs. unaided manual search; your mileage will vary with corpus size and hardware.*</sub>
+## What this enables
 
----
+| Capability | Boundary |
+| --- | --- |
+| Semantic retrieval across PDF passages | Relevance depends on the corpus and chunking. |
+| Answers with file and page citations | Citations support checking; answers still need review. |
+| Local embeddings and index | The final generation call uses Hugging Face hosting. |
+
+No measured speedup or accuracy benchmark is published here. Earlier timing estimates were projections, not evaluation results.
 
 ## 🏗️ Architecture
 
@@ -97,7 +98,7 @@ Retrieval-Augmented Generation (RAG) sidesteps the two biggest problems with usi
 
 ```bash
 # 1. Clone the repo
-git clone https://github.com/<your-username>/sop-assistant.git
+git clone https://github.com/Shubham261299/sop-assistant.git
 cd sop-assistant
 
 # 2. Create a virtual environment
@@ -231,3 +232,4 @@ All defaults live at the top of `index.py` and `chat.py`. Common tweaks:
 Built with [LangChain](https://www.langchain.com/), [FAISS](https://github.com/facebookresearch/faiss), [Hugging Face](https://huggingface.co/), and [PyMuPDF](https://pymupdf.readthedocs.io/).
 
 > ⭐ If this helped you, a star goes a long way.
+
